@@ -18,7 +18,11 @@ jobs:
       - run:
           name: Run tests
           command: pytest test.py
-
+  deploy:
+    docker:
+      - image: cimg/python:3.10
+    steps:
+      - run: echo "deploying on production"
 workflows:
   build_and_test:
     jobs:
@@ -26,3 +30,11 @@ workflows:
       - test:
           requires:
             - build
+      - deploy:
+          requires:
+             - test
+          filters:
+            branches:
+              only:
+               - main
+               
