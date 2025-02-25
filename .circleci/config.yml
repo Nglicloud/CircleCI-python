@@ -6,7 +6,7 @@ jobs:
       - image: cimg/python:3.10
     steps:
       - checkout
-      - run: python code.py
+      - run: python my_code.py
   test:
     docker:
       - image: cimg/python:3.10
