@@ -1,5 +1,5 @@
 import pytest
-from code import add_numbers
+from code import add_numbers  # ✅ Correct import
 
 def test_add_numbers():
     assert add_numbers(2, 3) == 5
